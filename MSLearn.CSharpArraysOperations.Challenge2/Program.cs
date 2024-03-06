@@ -24,3 +24,11 @@ C235
 G3003   - Error
 */
 
+/*
+ * sorts orders from orderStream in a sorted table
+ * displays each order ID, in ascendant order, with an error message next to order IDs that are not exactly 4 characters in length
+ * */
+string[] orderIDs =  orderStream.Split(',');
+Array.Sort(orderIDs);
+foreach (string orderID in orderIDs)
+    Console.WriteLine(orderID.ToCharArray().Length == 4 ? orderID : orderID + "\t- Error");
